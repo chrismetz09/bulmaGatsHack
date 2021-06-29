@@ -5,6 +5,21 @@
  */
 
 module.exports = {
-  /* Your site config here */
-  plugins: [],
+  siteMetadata: {
+    blogtitle: `Chris Metz BLOG`,
+    blogsubtitle: `Talking Tech`
+  },
+  plugins: [
+    `bulma`,
+    `node-sass`,
+    `gatsby-plugin-sass`,
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        path: `${__dirname}/src/markdown-pages`,
+        name: `markdown-pages`,
+      },
+    },
+    `gatsby-transformer-remark`
+  ]
 }
